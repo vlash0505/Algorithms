@@ -18,4 +18,17 @@ public class BinarySearch {
         return -1;
     }
 
+
+    public static int recursiveBinarySearch(int[] arr, int l, int r, int target) {
+        int mid = l + (r - l) / 2;
+        if (arr[mid] == target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            l = mid + 1;
+            return recursiveBinarySearch(arr, l, r, target);
+        } else {
+            r = mid - 1;
+            return recursiveBinarySearch(arr, l, r, target);
+        }
+    }
 }
